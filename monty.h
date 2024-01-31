@@ -42,6 +42,7 @@ typedef struct instruction_s
  * @line_number: Carries the current line number of the monty_file
  * @monty_file: Pointer to an opened monty file
  * @lineptr: Line read from monty_file
+ * @opcode: An array of a command and it argument
  *
  * Description: A structure of all the vital datas in the program
  * we will need as we progress.
