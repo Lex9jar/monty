@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * get_opcode - Fetches the approprate function for a particular
+ * get_opcodes - Fetches the approprate function for a particular
  * command
  *
  * Return: void.
@@ -16,8 +16,8 @@ void get_opcodes(void)
 	{
 		for (i = 0; commands[i]; i++)
 		{
-			if ((strcmp((const char*)bus.opcode[0],
-				(const char*)commands[i])) == 0)
+			if ((strcmp((const char *)bus.opcode[0],
+				(const char *)commands[i])) == 0)
 			{
 				bus.opcode[1] = strtok(NULL, " \t\v\n");
 				flg = 1;
@@ -58,7 +58,8 @@ void execute(void)
 
 	if (fetch[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%u: unknown instructions %s\n", bus.line_number, bus.opcode[0]);
+		fprintf(stderr, "L%u: unknown instructions %s\n",
+				bus.line_number, bus.opcode[0]);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
