@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	while (r > 0)
+	while (r != -1)
 	{
 		bus.line_number++;
 		bus.lineptr = NULL;
