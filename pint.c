@@ -9,16 +9,12 @@
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t *ptr = *stack;
-
-	(void)line_number;
-
-	if (ptr == NULL)
+	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty", bus.line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty", line_number);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%d\n", ptr->n);
+	printf("%d\n", (*stack)->n);
 }
