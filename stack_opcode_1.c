@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * push - Adds a new data to stack.
+ * _push - Adds a new data to stack.
  * @stack: A doubly linked list
  * @line_number: Line number in a monty file
  *
  * Return: void.
  */
-void push(stack_t **stack, unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 
@@ -47,13 +47,13 @@ void push(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pall - Prints a stack
+ * _pall - Prints a stack
  * @stack: A doubly linked list
  * @line_number: Current file line
  *
  * Return: void.
  */
-void pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr = *stack;
 	(void)line_number;
@@ -69,13 +69,13 @@ void pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pint - Prints the topmost node of a list
+ * _pint - Prints the topmost node of a list
  * @stack: A doubly linked list
  * @line_number: Line number in monty file
  *
  * Return: void.
  */
-void pint(stack_t **stack, unsigned int line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
@@ -87,13 +87,13 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop - Removes the top element of the stack
+ * _pop - Removes the top element of the stack
  * @stack: A doubly linked list
  * @line_number: Current command line index in monty file
  *
  * Return: void.
  */
-void pop(stack_t **stack, unsigned int line_number)
+void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *del = *stack;
 
@@ -120,13 +120,13 @@ void pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * swap - swaps the top two elements of the stack
+ * _swap - swaps the top two elements of the stack
  * @stack: A doubly linked list
  * @line_number: current command line in monty file
  *
  * Return: void.
  */
-void swap(stack_t **stack, unsigned int line_number)
+void _swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *first, *second, *tmp;
 
@@ -151,6 +151,6 @@ void swap(stack_t **stack, unsigned int line_number)
 		first->next = tmp;
 		tmp->prev = first;
 	}
-	
+
 	*stack = second;
 }
