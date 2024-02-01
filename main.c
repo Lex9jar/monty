@@ -1,6 +1,6 @@
 #include "monty.h"
 
-bus_t bus = {0, NULL, NULL, NULL, NULL, NULL};
+bus_t bus = {0, 0, NULL, NULL, NULL, NULL, NULL};
 
 /**
  * main - An interpreter for Monty ByteCodes files.
