@@ -8,7 +8,7 @@
  */
 void get_opcodes(void)
 {
-	char *commands[] = {"push", "pall", NULL};
+	char *commands[] = {"push", "pall", "pint", NULL};
 	int i, flg = 0;
 
 	bus.opcode = strtok(bus.lineptr, " \t\n");
@@ -28,7 +28,6 @@ void get_opcodes(void)
 	if (flg)
 		execute();
 
-	return;
 }
 
 /**
@@ -39,8 +38,7 @@ void get_opcodes(void)
 void execute(void)
 {
 	instruction_t fetch[] = {
-		{"push", push},
-		{"pall", pall},
+		{"push", push},	{"pall", pall}, {"pint", pint},
 		{NULL, NULL}
 	};
 	int i = 0;
