@@ -43,6 +43,7 @@ void push(stack_t **stack, unsigned int line_number)
 		new->next = *stack;
 	}
 	*stack = new;
+	bus.size++;
 }
 
 /**
@@ -115,4 +116,41 @@ void pop(stack_t **stack, unsigned int line_number)
 
 		free(del);
 	}
+	bus.size--;
+}
+
+/**
+ * swap - swaps the top two elements of the stack
+ * @stack: A doubly linked list
+ * @line_number: current command line in monty file
+ *
+ * Return: void.
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first, *second, *tmp;
+
+	if (bus.size < 2)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+
+	tmp = (*stack)->next->next;
+	first = *stack;
+	second = (*stack)->next;
+
+	second->prev = NULL;
+	second->next = first;
+	first->prev = second;
+	if (bus.size == 2)
+		first->next = NULL;
+	else
+	{
+		first->next = tmp;
+		tmp->prev = first;
+	}
+	
+	*stack = second;
 }
