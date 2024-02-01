@@ -32,7 +32,8 @@ void get_opcodes(void)
 	}
 	if (flg == 1)
 	{
-		printf("Found command == %s\nWith arg == %s\n", bus.opcode[0], bus.opcode[1]);
+		printf("Found command == %s\nWith arg == %s\n",
+				bus.opcode[0], bus.opcode[1]);
 		execute();
 	}
 }
