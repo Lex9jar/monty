@@ -59,7 +59,7 @@ void execute(void)
 
 	if (fetch[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%u: unknown instructions %s\n",
+		fprintf(stderr, "L%d: unknown instructions %s\n",
 				bus.line_number, bus.opcode);
 		free_bus();
 		exit(EXIT_FAILURE);
