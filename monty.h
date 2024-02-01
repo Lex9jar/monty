@@ -39,6 +39,7 @@ typedef struct instruction_s
 /**
  * struct bus_s - a struct that carries all data for the program
  * @stack: A linear data structure
+ * @size: Keeps track of the size of stack
  * @line_number: Carries the current line number of the monty_file
  * @monty_file: Pointer to an opened monty file
  * @lineptr: Line read from monty_file
@@ -53,6 +54,7 @@ typedef struct instruction_s
 typedef struct bus_s
 {
 	unsigned int line_number;
+	int size;
 	stack_t *stack;
 	char *lineptr;
 	FILE *monty_file;
@@ -70,6 +72,7 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 /* = > = > = > HANDY_UTILS < = < = < = */
 int not_number(char *token);
