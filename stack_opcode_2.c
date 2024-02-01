@@ -22,3 +22,16 @@ void add(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 	(*stack)->n = sum;
 }
+
+/**
+ * nop - Does nothing
+ * @stack: A doubly linked list
+ * @line_number: Command line number in monty file
+ *
+ * Return: void.
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
