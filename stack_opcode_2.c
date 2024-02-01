@@ -2,8 +2,8 @@
 
 /**
  * _add - Adds the top two elements of the stack
- * @stack: A doubly linked list
- * @line_number: command line number in the monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number in the monty_file
  *
  * Return: void.
  */
@@ -25,8 +25,8 @@ void _add(stack_t **stack, unsigned int line_number)
 
 /**
  * _nop - Does nothing
- * @stack: A doubly linked list
- * @line_number: Command line number in monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number in monty_file
  *
  * Return: void.
  */
@@ -39,8 +39,8 @@ void _nop(stack_t **stack, unsigned int line_number)
 /**
  * _sub - substracts the top element of the stack from the second
  * top element of the stack
- * @stack: A doubly linked list
- * @line_number: Command line number in monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number in monty_file
  *
  * Return: void.
  */
@@ -63,8 +63,8 @@ void _sub(stack_t **stack, unsigned int line_number)
 /**
  * _div - Divides the second top element of the stack by the top
  * element of the stack
- * @stack: A doubly linked list
- * @line_number: Command line number in monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number in monty_file
  *
  * Return: void.
  */
@@ -95,7 +95,7 @@ void _div(stack_t **stack, unsigned int line_number)
  * _mul - multiplies the second top element of the stack with the top element
  * of the stack
  * @stack: A pointer to a stack
- * @line_number: Command line number in monty file
+ * @line_number: current command line number in monty_file
  *
  * Return: void.
  */
