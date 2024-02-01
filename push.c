@@ -33,12 +33,15 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (*stack)
-		(*stack)->prev = new;
 	new->prev = NULL;
 	new->n = atoi(bus.arg);
-	new->next = *stack;
+	new->next = NULL;
 
+	if (*stack)
+	{
+		(*stack)->prev = new;
+		new->next = *stack;
+	}
 	*stack = new;
 }
 
