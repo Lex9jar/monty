@@ -78,14 +78,14 @@ void _div(stack_t **stack, unsigned int line_number)
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
+	quotient = (*stack)->next->n / (*stack)->n;
+	_pop(stack, line_number);
+	(*stack)->n = quotient;
+
 	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
-
-	quotient = (*stack)->next->n / (*stack)->n;
-	_pop(stack, line_number);
-	(*stack)->n = quotient;
 }
