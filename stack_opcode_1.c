@@ -57,15 +57,15 @@ void pall(stack_t **stack, unsigned int line_number)
 	stack_t *ptr = *stack;
 	(void)line_number;
 
-	if (ptr == NULL)
+	if (*stack == NULL)
 		return;
+
 	while (ptr)
 	{
 		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}
 }
-#include "monty.h"
 
 /**
  * pint - Prints the topmost node of a list
@@ -84,7 +84,6 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", (*stack)->n);
 }
-#include "monty.h"
 
 /**
  * pop - Removes the top element of the stack
@@ -104,9 +103,16 @@ void pop(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
+	if ((*stack)->next == NULL)
+	{
+		free(*stack);
+		*stack = NULL;
+	}
+	else
+	{
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
 
-	free(del);
-	del = NULL;
+		free(del);
+	}
 }
