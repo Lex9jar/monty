@@ -10,7 +10,8 @@ void get_opcodes(void)
 {
 	char *commands[] = {"push", "pall", "pint",
 			"pop", "swap", "add",
-			"nop", "sub", "div", NULL};
+			"nop", "sub", "div",
+			"mul", NULL};
 	int i, flg = 0;
 
 	bus.opcode = strtok(bus.lineptr, " \t\n");
@@ -43,7 +44,7 @@ void execute(void)
 		{"push", _push}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
 		{"nop", _nop}, {"sub", _sub}, {"div", _div},
-		{NULL, NULL}
+		{"mul", _mul}, {NULL, NULL}
 	};
 	int i = 0;
 
@@ -59,7 +60,7 @@ void execute(void)
 
 	if (fetch[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instructions %s\n",
+		fprintf(stderr, "L%u: unknown instructions %s\n",
 				bus.line_number, bus.opcode);
 		free_bus();
 		exit(EXIT_FAILURE);
