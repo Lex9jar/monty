@@ -11,7 +11,7 @@ void get_opcodes(void)
 	char *commands[] = {"push", "pall", "pint",
 			"pop", "swap", "add",
 			"nop", "sub", "div",
-			"mul", NULL};
+			"mul", "mod", NULL};
 	int i, flg = 0;
 
 	bus.opcode = strtok(bus.lineptr, " \t\n");
@@ -44,7 +44,7 @@ void execute(void)
 		{"push", _push}, {"pall", _pall}, {"pint", _pint},
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
 		{"nop", _nop}, {"sub", _sub}, {"div", _div},
-		{"mul", _mul}, {NULL, NULL}
+		{"mul", _mul}, {"mod", _mod}, {NULL, NULL}
 	};
 	int i = 0;
 
