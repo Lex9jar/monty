@@ -59,3 +59,27 @@ void _pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", chr);
 }
+
+/**
+ * _pstr - Prints the string starging at the top of the stack,
+ * followed by a new line
+ * @stack: pointer to a stack
+ * @line_number: current command line number in monty_file
+ *
+ * Return: void.
+ */
+void _pstr(stack_t **stack, unsigned int line_number)
+{
+	int chr;
+
+	(void)line_number;
+	while (*stack)
+	{
+		chr = (*stack)->n;
+		if (chr == 0 || (chr < 0 || chr > 127))
+			break;
+		printf("%c", chr);
+		*stack = (*stack)->next;
+	}
+	printf("\n");
+}
