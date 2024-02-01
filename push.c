@@ -11,6 +11,20 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 
+	printf("HERE AT PUSH\n");
+	if (bus.opcode[1] == NULL)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+	if (not_number(bus.opcode[1]))
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
@@ -20,14 +34,8 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (not_number(bus.opcode[1]))
-	{
-		fprintf(stderr, "l%u: usage: push integer\n", line_number);
-		free(new);
-		free_bus();
-		exit(EXIT_FAILURE);
-	}
-
+	if (*stack)
+		(*stack)->prev = new;
 	new->prev = NULL;
 	new->n = atoi(bus.opcode[1]);
 	new->next = *stack;
@@ -46,7 +54,11 @@ int not_number(char *token)
 	int i;
 
 	for (i = 0; token[i]; i++)
-		if (!isdigit(token[i]))
+	{
+		if (token[0] == '-')
+			i++;
+		if (token[i] < 48 || token[i] > 57)
 			return (1);
+	}
 	return (0);
 }
