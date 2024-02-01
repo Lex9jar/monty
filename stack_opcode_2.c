@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * add - Adds the top two elements of the stack
+ * _add - Adds the top two elements of the stack
  * @stack: A doubly linked list
  * @line_number: command line number in the monty file
  *
  * Return: void.
  */
-void add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0;
 
@@ -19,32 +19,32 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 
 	sum = (*stack)->n + (*stack)->next->n;
-	pop(stack, line_number);
+	_pop(stack, line_number);
 	(*stack)->n = sum;
 }
 
 /**
- * nop - Does nothing
+ * _nop - Does nothing
  * @stack: A doubly linked list
  * @line_number: Command line number in monty file
  *
  * Return: void.
  */
-void nop(stack_t **stack, unsigned int line_number)
+void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
 }
 
 /**
- * sub - substracts the top element of the stack from the second
+ * _sub - substracts the top element of the stack from the second
  * top element of the stack
  * @stack: A doubly linked list
  * @line_number: Command line number in monty file
  *
  * Return: void.
  */
-void sub(stack_t **stack, unsigned int line_number)
+void _sub(stack_t **stack, unsigned int line_number)
 {
 	int dif;
 
@@ -56,6 +56,36 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 
 	dif = (*stack)->next->n - (*stack)->n;
-	pop(stack, line_number);
+	_pop(stack, line_number);
 	(*stack)->n = dif;
+}
+
+/**
+ * _div - Divides the second top element of the stack by the top
+ * element of the stack
+ * @stack: A doubly linked list
+ * @line_number: Command line number in monty file
+ *
+ * Return: void.
+ */
+void _div(stack_t **stack, unsigned int line_number)
+{
+	int quotient;
+
+	if (bus.size < 2)
+	{
+		fprintf(stderr, "L%u: can't div, stack tooo short\n", line_number);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_number);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+
+	quotient = (*stack)->next->n / (*stack)->n;
+	_pop(stack, line_number);
+	(*stack)->n = quotient;
 }
