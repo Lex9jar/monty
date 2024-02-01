@@ -12,6 +12,8 @@ void get_opcodes(void)
 	int i, flg = 0;
 
 	bus.opcode[0] = strtok(bus.lineptr, " \t\r\n");
+	if (bus.opcode && (strchr((const char *)bus.opcode[0], '#')))
+		return;
 	while (bus.opcode[0])
 	{
 		for (i = 0; commands[i]; i++)
