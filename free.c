@@ -17,6 +17,7 @@ void free_bus(void)
 
 /**
  * free_stack - Frees a doubly linked list.
+ * @stack: A doubly linked list
  *
  * Return: void.
  */
