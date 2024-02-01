@@ -11,7 +11,7 @@ bus_t bus = {0, NULL, NULL, NULL, {NULL, NULL}};
  */
 int main(int argc, char *argv[])
 {
-	ssize_t r = 1;
+	long int r = 1;
 	size_t n = 0;
 
 	if (argc != 2)
