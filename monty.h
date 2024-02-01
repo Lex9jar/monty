@@ -42,7 +42,8 @@ typedef struct instruction_s
  * @line_number: Carries the current line number of the monty_file
  * @monty_file: Pointer to an opened monty file
  * @lineptr: Line read from monty_file
- * @opcode: An array of a command and it argument
+ * @opcode: An opcode
+ * @arg: Argument for opcode
  *
  *
  * Description: A structure of all the vital datas in the program
@@ -55,8 +56,8 @@ typedef struct bus_s
 	stack_t *stack;
 	char *lineptr;
 	FILE *monty_file;
-	char *opcode[2];
-	stack_t *first;
+	char *opcode;
+	char *arg;
 } bus_t;
 extern bus_t bus;
 
