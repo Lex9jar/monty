@@ -57,5 +57,5 @@ void _pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	write(1, &chr, 1);
+	printf("%c\n", chr);
 }
