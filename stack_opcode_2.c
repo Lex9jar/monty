@@ -13,7 +13,7 @@ void _add(stack_t **stack, unsigned int line_number)
 
 	if (bus.size < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
@@ -50,7 +50,7 @@ void _sub(stack_t **stack, unsigned int line_number)
 
 	if (bus.size < 2)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
@@ -74,18 +74,43 @@ void _div(stack_t **stack, unsigned int line_number)
 
 	if (bus.size < 2)
 	{
-		fprintf(stderr, "L%d: can't div, stack tooo short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack tooo short\n", line_number);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
-	quotient = (*stack)->next->n / (*stack)->n;
-	_pop(stack, line_number);
-	(*stack)->n = quotient;
 
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", line_number);
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		free_bus();
 		exit(EXIT_FAILURE);
 	}
+
+	quotient = (*stack)->next->n / (*stack)->n;
+	_pop(stack, line_number);
+	(*stack)->n = quotient;
+}
+
+/**
+ * _mul - multiplies the second top element of the stack with the top element
+ * of the stack
+ * @stack: A pointer to a stack
+ * @line_number: Command line number in monty file
+ *
+ * Return: void.
+ */
+void _mul(stack_t **stack, unsigned int line_number)
+{
+	int product;
+
+	if (bus.size < 2)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+
+	product = (*stack)->next->n * (*stack)->n;
+	_pop(stack, line_number);
+	(*stack)->n = product;
 }
