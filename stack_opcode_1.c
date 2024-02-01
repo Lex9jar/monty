@@ -2,8 +2,8 @@
 
 /**
  * _push - Adds a new data to stack.
- * @stack: A doubly linked list
- * @line_number: Line number in a monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number of monty_file
  *
  * Return: void.
  */
@@ -48,8 +48,8 @@ void _push(stack_t **stack, unsigned int line_number)
 
 /**
  * _pall - Prints a stack
- * @stack: A doubly linked list
- * @line_number: Current file line
+ * @stack: pointer to a stack
+ * @line_number: Current command line number of monty_file
  *
  * Return: void.
  */
@@ -70,8 +70,8 @@ void _pall(stack_t **stack, unsigned int line_number)
 
 /**
  * _pint - Prints the topmost node of a list
- * @stack: A doubly linked list
- * @line_number: Line number in monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number of monty_file
  *
  * Return: void.
  */
@@ -88,8 +88,8 @@ void _pint(stack_t **stack, unsigned int line_number)
 
 /**
  * _pop - Removes the top element of the stack
- * @stack: A doubly linked list
- * @line_number: Current command line index in monty file
+ * @stack: pointer to a stack
+ * @line_number: Current command line number in monty_file
  *
  * Return: void.
  */
@@ -121,8 +121,8 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 /**
  * _swap - swaps the top two elements of the stack
- * @stack: A doubly linked list
- * @line_number: current command line in monty file
+ * @stack: pointer to a stack
+ * @line_number: current command line number in monty_file
  *
  * Return: void.
  */
