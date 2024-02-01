@@ -7,11 +7,8 @@
  */
 void free_bus(void)
 {
-	if (bus.stack != NULL)
-		free_stack(&(bus.stack));
-	if (bus.lineptr != NULL)
-		free(bus.lineptr);
-
+	free_stack(&(bus.stack));
+	free(bus.lineptr);
 	fclose(bus.monty_file);
 }
 
