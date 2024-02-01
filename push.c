@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * push - Adds a new data to stack
+ * push - Adds a new data to stack.
  * @stack: A doubly linked list
  * @line_number: Line number in a monty file
  *
