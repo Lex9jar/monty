@@ -12,7 +12,7 @@ void get_opcodes(void)
 			"pop", "swap", "add",
 			"nop", "sub", "div",
 			"mul", "mod", "pchar",
-			"pstr", NULL};
+			"pstr", "rotl", NULL};
 	int i, flg = 0;
 
 	bus.opcode = strtok(bus.lineptr, " \t\n");
@@ -54,7 +54,7 @@ void execute(void)
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
 		{"nop", _nop}, {"sub", _sub}, {"div", _div},
 		{"mul", _mul}, {"mod", _mod}, {"pchar", _pchar},
-		{"pstr", _pstr}, {NULL, NULL}
+		{"pstr", _pstr}, {"rotl", _rotl}, {NULL, NULL}
 	};
 	int i = 0;
 
