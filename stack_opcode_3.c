@@ -123,6 +123,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top, *ptr = *stack;
 
+	(void)line_number;
 	if (*stack == NULL || bus.size == 1)
 		return;
 
