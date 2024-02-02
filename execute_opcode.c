@@ -16,7 +16,7 @@ void get_opcodes(void)
 	int i, flg = 0;
 
 	bus.opcode = strtok(bus.lineptr, " \t\n");
-	if (bus.opcode && (strchr((const char *)bus.opcode, '#')))
+	if (bus.opcode == NULL || (strchr((const char *)bus.opcode, '#')))
 		return;
 
 	for (i = 0; commands[i]; i++)
@@ -31,6 +31,14 @@ void get_opcodes(void)
 
 	if (flg)
 		execute();
+	else
+	{
+		fprintf(stderr, "L%u: unknown instruction %s\n",
+				bus.line_number, bus.opcode);
+		free_bus();
+		exit(EXIT_FAILURE);
+	}
+
 
 }
 
@@ -58,13 +66,5 @@ void execute(void)
 			return;
 		}
 		i++;
-	}
-
-	if (fetch[i].opcode == NULL)
-	{
-		fprintf(stderr, "L%u: unknown instructions %s\n",
-				bus.line_number, bus.opcode);
-		free_bus();
-		exit(EXIT_FAILURE);
 	}
 }
