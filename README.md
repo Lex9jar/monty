@@ -55,10 +55,12 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o monty
 ```
 
 ##USAGE:
-```monty file
+```
+$ monty file
 ```
 
 **FILES** | **OBJECTIVES**
+---------- | ----------
 [push] () | Pushes an element to the stack.
 [pall] () | Prints all the values on the stack, starting from the top of the stack.
 [pint] () | Prints the value at the top of the stack, followed by a new line.
