@@ -38,17 +38,17 @@ typedef struct instruction_s
 
 /**
  * struct bus_s - a struct that carries all data for the program
- * @stack: A linear data structure
- * @_FIFO: For setting data input format
- * @size: Keeps track of the size of stack
- * @line_number: Carries the current line number of the monty_file
- * @monty_file: Pointer to an opened monty file
- * @lineptr: Line read from monty_file
- * @opcode: An opcode
- * @arg: Argument for opcode
  *
+ * @line_number: Keep track of current command line in a monty file
+ * @size: keep track of the number of nodes added to stack
+ * @_FIFO: For switching between modes (stack/queue)
+ * @stack: pointer to a stack_t stack
+ * @lineptr: pointer to a read line from a monty file
+ * @monty_file: pointer to a monty file (.m)
+ * @opcode: pointer to a command to execute
+ * @arg: argument for opcode
  *
- * Description: A structure of all the vital datas in the program
+ * Description: A structure of all the handy datas in the program
  * we will need as we progress.
  *
  */
