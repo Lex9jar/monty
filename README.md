@@ -61,20 +61,20 @@ $ monty file
 
 **FILES** | **OBJECTIVES**
 ---------- | ----------
-[push] () | Pushes an element to the stack.
-[pall] () | Prints all the values on the stack, starting from the top of the stack.
-[pint] () | Prints the value at the top of the stack, followed by a new line.
-[pop] () | Removes the top element of the stack.
-[swap] () | Swaps the top two elements of the stack.
-[add] () | Adds the top two elements of the stack.
-[nop] () | Does nothing
-[sub] () | Substract the top element of the stack from the second top element of the stack.
-[div] () | Divides the second top element of the stack by the top element of the stack
-[mul] () | Multiplies the second top element of the stack with the top element of the stack.
-[mod] () | Computes the rest of the division of the second top element of the stack by the top element of the stack.
-[pchar] () | Prints the char at the top of the stack, followed by a new line
-[pstr] () | Prints the string starting at the top of the stack, followed by a new line.
-[rotl] () | Rotates the stack to the top.
-[totr] () | Rotates the stack to the bottom.
-[stack] () | Sets the format of the data to a stack (LIFO).
-[queue] () | Sets the format of the data to a queue (FIFO).
+[push](https://github.com/Lex9jar/monty/blob/main/opcode_func_1.c "Title") | Pushes an element to the stack.
+[pall](https://github.com/Lex9jar/monty/blob/main/opcode_func_1.c "Title") | Prints all the values on the stack, starting from the top of the stack.
+[pint](https://github.com/Lex9jar/monty/blob/main/opcode_func_1.c "Title") | Prints the value at the top of the stack, followed by a new line.
+[pop](https://github.com/Lex9jar/monty/blob/main/opcode_func_1.c "Title") | Removes the top element of the stack.
+[swap](https://github.com/Lex9jar/monty/blob/main/opcode_func_1.c "Title") | Swaps the top two elements of the stack.
+[add](https://github.com/Lex9jar/monty/blob/main/opcode_func_2.c "Title") | Adds the top two elements of the stack.
+[nop](https://github.com/Lex9jar/monty/blob/main/opcode_func_2.c "Title") | Does nothing
+[sub](https://github.com/Lex9jar/monty/blob/main/opcode_func_2.c "Title") | Substract the top element of the stack from the second top element of the stack.
+[div](https://github.com/Lex9jar/monty/blob/main/opcode_func_2.c "Title") | Divides the second top element of the stack by the top element of the stack
+[mul](https://github.com/Lex9jar/monty/blob/main/opcode_func_2.c "Title") | Multiplies the second top element of the stack with the top element of the stack.
+[mod](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Computes the rest of the division of the second top element of the stack by the top element of the stack.
+[pchar](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Prints the char at the top of the stack, followed by a new line
+[pstr](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Prints the string starting at the top of the stack, followed by a new line.
+[rotl](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Rotates the stack to the top.
+[totr](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Rotates the stack to the bottom.
+[stack](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Sets the format of the data to a stack (LIFO).
+[queue](https://github.com/Lex9jar/monty/blob/main/opcode_func_3.c "Title") | Sets the format of the data to a queue (FIFO).
