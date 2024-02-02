@@ -111,3 +111,28 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	bottom->next = NULL;
 	bottom->prev = ptr;
 }
+
+/**
+ * _rotr - Rotates the stack to the bottom.
+ * @stack: pointer to a stack
+ * @line_number: current command line number in monty_file
+ *
+ * Return: void.
+ */
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top, *ptr = *stack;
+
+	if (*stack == NULL || bus.size == 1)
+		return;
+
+	while (ptr->next->next)
+		ptr = ptr->next;
+
+	top = ptr->next;
+	top->prev = NULL;
+	ptr->next = NULL;
+
+	top->next = *stack;
+	*stack = top;
+}
