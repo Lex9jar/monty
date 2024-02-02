@@ -1,6 +1,6 @@
 #include "monty.h"
 
-bus_t bus = {0, 0, NULL, NULL, NULL, NULL, NULL};
+bus_t bus = {0, 0, 0, NULL, NULL, NULL, NULL, NULL};
 
 /**
  * main - An interpreter for Monty ByteCodes files.
@@ -11,7 +11,7 @@ bus_t bus = {0, 0, NULL, NULL, NULL, NULL, NULL};
  */
 int main(int argc, char *argv[])
 {
-	long int r = 1;
+	ssize_t r = 1;
 	size_t n = 0;
 
 	if (argc != 2)
