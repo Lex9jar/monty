@@ -10,13 +10,7 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
-	if (bus.arg == NULL)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		free_bus();
-		exit(EXIT_FAILURE);
-	}
-	if (not_number(bus.arg))
+	if (bus.arg == NULL || not_number(bus.arg))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_bus();
