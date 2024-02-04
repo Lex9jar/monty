@@ -58,7 +58,7 @@ void add_at_beg(void)
  */
 void add_at_end(void)
 {
-	stack_t *new, *ptr = bus.stack;
+	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
@@ -75,13 +75,13 @@ void add_at_end(void)
 	{
 		new->prev = NULL;
 		bus.stack = new;
+		bus.last = new;
 	}
 	else
 	{
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = new;
-		new->prev = ptr;
+		bus.last->next = new;
+		new->prev = bus.last;
+		bus.last = new;
 	}
 	bus.size++;
 }

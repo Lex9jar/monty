@@ -43,7 +43,6 @@ typedef struct instruction_s
  * @size: keep track of the number of nodes added to stack
  * @_FIFO: For switching between modes (stack/queue)
  * @stack: pointer to a stack_t stack
- * @last: Keep track of the last added node from add_at_end
  * @lineptr: pointer to a read line from a monty file
  * @monty_file: pointer to a monty file (.m)
  * @opcode: pointer to a command to execute
@@ -59,7 +58,6 @@ typedef struct bus_s
 	int size;
 	int _FIFO;
 	stack_t *stack;
-	stack_t *last;
 	char *lineptr;
 	FILE *monty_file;
 	char *opcode;
